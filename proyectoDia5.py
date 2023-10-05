@@ -80,17 +80,17 @@
 def devolver_distintos(*args):
     total = 0
     numero_mas_alto = 0
+    for arg in args:
+        total += arg
     if total > 15:
-        for arg in args:
-            total += arg
+        if total > numero_mas_alto:
+            numero_mas_alto = arg
+            print(f'Total: {total} Numero mas alto {numero_mas_alto}')
 
-            if arg > numero_mas_alto:
-                numero_mas_alto = arg
-                print(f'Total: {total} Numero mas alto {numero_mas_alto}')
     else:
         print(f"El numero no supera a 15")
 
 
-resultado_suma = devolver_distintos(1, 5, 3)
+resultado_suma = devolver_distintos(1, 5, 6)
 
 
