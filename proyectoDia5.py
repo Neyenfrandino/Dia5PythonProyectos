@@ -79,16 +79,18 @@
 
 
 
-# Proyecto numero 1
+# # Proyecto numero 1
+# Crea una función llamada devolver_distintos() que reciba 3 integers como parámetros.
+# Si la suma de los 3 numeros es mayor a 15, va a devolver el número mayor.
+# Si la suma de los 3 numeros es menor a 10, va a devolver el número menor.
+# Si la suma de los 3 números es un valor entre 10 y 15 (incluidos) va a devolver el número de valorintermedio.
+
 def devolver_distintos(*args):
     total = 0
-    numero_mas_alto = 0
     for arg in args:
         total += arg
     if total > 15:
-        if total > numero_mas_alto:
-            numero_mas_alto = arg
-            print(f'Total: {total} Numero mas alto {numero_mas_alto}')
+            print(f'Total: {total} Numero mas alto {max(args)}')
 
     elif total < 15 and total in range(10, 16):
         print(f"El numero se encuentra entre 10 y 15, el numero es: {total} ")
@@ -96,9 +98,10 @@ def devolver_distintos(*args):
         print(f'Tu numero no supera a 15 ni se encuentra en el rango'
               f' y el numero mas bajo es: {min(args)}')
 
-resultado_suma = devolver_distintos(1, 5, 3)
+resultado_suma = devolver_distintos(1, 10, 33)
 
 
+# Proyecto numero 2
 
 
 
