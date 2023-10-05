@@ -77,6 +77,9 @@
 # suma(55, 33, 178, 66, 417, 555, x =789, y = 456, z = 2369 )
 
 
+
+
+# Proyecto numero 1
 def devolver_distintos(*args):
     total = 0
     numero_mas_alto = 0
@@ -87,10 +90,18 @@ def devolver_distintos(*args):
             numero_mas_alto = arg
             print(f'Total: {total} Numero mas alto {numero_mas_alto}')
 
+    elif total < 15 and total in range(10, 16):
+        print(f"El numero se encuentra entre 10 y 15, el numero es: {total} ")
     else:
-        print(f"El numero no supera a 15")
+        print(f'Tu numero no supera a 15 ni se encuentra en el rango'
+              f' y el numero mas bajo es: {min(args)}')
+
+resultado_suma = devolver_distintos(1, 5, 3)
 
 
-resultado_suma = devolver_distintos(1, 5, 6)
+
+
+
+
 
 
