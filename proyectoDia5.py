@@ -85,23 +85,36 @@
 # Si la suma de los 3 numeros es menor a 10, va a devolver el número menor.
 # Si la suma de los 3 números es un valor entre 10 y 15 (incluidos) va a devolver el número de valorintermedio.
 
-def devolver_distintos(*args):
-    total = 0
-    for arg in args:
-        total += arg
-    if total > 15:
-            print(f'Total: {total} Numero mas alto {max(args)}')
-
-    elif total < 15 and total in range(10, 16):
-        print(f"El numero se encuentra entre 10 y 15, el numero es: {total} ")
-    else:
-        print(f'Tu numero no supera a 15 ni se encuentra en el rango'
-              f' y el numero mas bajo es: {min(args)}')
-
-resultado_suma = devolver_distintos(1, 10, 33)
+# def devolver_distintos(*args):
+#     total = 0
+#     for arg in args:
+#         total += arg
+#     if total > 15:
+#             print(f'Total: {total} Numero mas alto {max(args)}')
+#
+#     elif total < 15 and total in range(10, 16):
+#         print(f"El numero se encuentra entre 10 y 15, el numero es: {total} ")
+#     else:
+#         print(f'Tu numero no supera a 15 ni se encuentra en el rango'
+#               f' y el numero mas bajo es: {min(args)}')
+#
+# resultado_suma = devolver_distintos(1, 10, 33)
 
 
 # Proyecto numero 2
+def devolver_en_orden_alfabetico(palabra):
+    lista = []
+
+    for letra in palabra:
+        if letra not in lista:
+            lista.append(letra)
+
+    lista.sort()
+    print(' '.join(lista))
+
+
+devolver_en_orden_alfabetico('fantastico')
+
 
 
 
