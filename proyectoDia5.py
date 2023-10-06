@@ -101,20 +101,26 @@
 # resultado_suma = devolver_distintos(1, 10, 33)
 
 
+
+
 # Proyecto numero 2
-def devolver_en_orden_alfabetico(palabra):
-    lista = []
+# Escribe una función (puedes ponerle cualquier nombre que
+# quieras) que reciba cualquier palabra como parámetro, y que
+# devuelva todas sus letras únicas (sin repetir) pero en orden
+# alfabético.
 
-    for letra in palabra:
-        if letra not in lista:
-            lista.append(letra)
-
-    lista.sort()
-    print(' '.join(lista))
-
-
-devolver_en_orden_alfabetico('fantastico')
-
+# def devolver_en_orden_alfabetico(palabra):
+#     lista = []
+#
+#     for letra in palabra:
+#         if letra not in lista:
+#             lista.append(letra)
+#
+#     lista.sort()
+#     print(' '.join(lista))
+#
+# devolver_en_orden_alfabetico('fantastico')
+#
 
 
 
