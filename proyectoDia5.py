@@ -124,16 +124,40 @@
 
 
 #Proyecto numero 3
+# Escribe una función que requiera una cantidad indefinida de
+# argumentos. Lo que hará esta función es devolver True si en
+# algún momento se ha ingresado al numero cero repetido dos
+# veces consecutivas.
+#
+#
+# def ceros_cosecutivos(*args):
+#     for i in range(len(args) - 1):
+#         if args[i] == args[i + 1]:
+#             return True
+#     return False
+#
+#
+# if ceros_cosecutivos(1, 2, 5, 0, 0, 1):
+#     print('True')
+# else:
+#     print('False')
 
 
-def ceros_cosecutivos(*args):
-    for i in range(len(args) - 1):
-        if args[i] == args[i + 1]:
-            return True
-    return False
 
 
-if ceros_cosecutivos(1, 2, 5, 0, 0, 1):
-    print('True')
-else:
-    print('False')
+# Proyecto numero 4
+
+def contar_primos(num):
+    numero_usuario = int(num) + 1
+    numeros_primos = 1
+    numeros_primos += 1
+    indice = 0
+
+    for numero in range(numeros_primos, numero_usuario):
+        opracion = numero % numeros_primos
+        if opracion == 0:
+            # print(f"{numero} % {numeros_primos} = {opracion}")
+            indice += 1
+    print(f"Y la cantidad de numeros primos que encntramos en {num} es: {indice}")
+
+contar_primos(10)
