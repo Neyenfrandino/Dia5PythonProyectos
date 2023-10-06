@@ -120,10 +120,20 @@
 #     print(' '.join(lista))
 #
 # devolver_en_orden_alfabetico('fantastico')
-#
 
 
 
+#Proyecto numero 3
 
 
+def ceros_cosecutivos(*args):
+    for i in range(len(args) - 1):
+        if args[i] == args[i + 1]:
+            return True
+    return False
 
+
+if ceros_cosecutivos(1, 2, 5, 0, 0, 1):
+    print('True')
+else:
+    print('False')
