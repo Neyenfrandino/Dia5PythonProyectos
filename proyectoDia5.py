@@ -1,5 +1,4 @@
-#
-#
+
 # def chequear_3_cifras(lista_3):
 #     lista = []
 #     lista_no_3_cifras = []
@@ -119,7 +118,7 @@
 #     lista.sort()
 #     print(' '.join(lista))
 #
-# devolver_en_orden_alfabetico('fantastico')
+# devolver_en_orden_alfabetico('entretenido')
 
 
 
@@ -137,7 +136,7 @@
 #     return False
 #
 #
-# if ceros_cosecutivos(1, 2, 5, 0, 0, 1):
+# if ceros_cosecutivos(0, 2, 5, 0):
 #     print('True')
 # else:
 #     print('False')
@@ -145,19 +144,99 @@
 
 
 
-# Proyecto numero 4
+# # Proyecto numero 4
+#Escribe una función llamada contar_primos() que requiera un
+# solo argumento numérico.
+# Esta función va a mostrar en pantalla todos los números
+# primos existentes en el rango que va desde cero hasta ese
+# número incluido, y va a devolver la cantidad de números
+# primos que encontró.
+# Aclaración, por convención el 0 y el 1 no se consideran primos.
+# def contar_primos(num):
+#     numero_usuario = int(num) + 1
+#     numeros_primos = 2
+#     indice = 0
+#
+#     for numero in range(numeros_primos, numero_usuario):
+#         es_primo = True
+#
+#         for divisor in range(2, numero):
+#             if numero % divisor == 0:
+#                 es_primo = False
+#                 break
+#
+#         if es_primo:
+#             print(f"{numero} es primo")
+#             indice += 1
+#
+#     print(f"La cantidad de numeros primos que encontramos en {num} es: {indice}")
+#
+# contar_primos(50)
 
-def contar_primos(num):
-    numero_usuario = int(num) + 1
-    numeros_primos = 1
-    numeros_primos += 1
-    indice = 0
 
-    for numero in range(numeros_primos, numero_usuario):
-        opracion = numero % numeros_primos
-        if opracion == 0:
-            # print(f"{numero} % {numeros_primos} = {opracion}")
-            indice += 1
-    print(f"Y la cantidad de numeros primos que encntramos en {num} es: {indice}")
 
-contar_primos(10)
+
+
+
+
+from random import choice
+
+palabras_lista = ['planta', 'naturaleza', 'ecosistema', 'magia', 'fantasia', 'realidad', 'vida', 'trading', 'pasion']
+aleatorio = choice(palabras_lista).lower()
+def mensaje_a_usuario():
+    cantidad_letras_palabra = len(aleatorio)
+    print(f'La palabra que salio al azar tiene {cantidad_letras_palabra} caracteres '
+          f'Usted cuenta con 6 vidas para adivinar la palabra.')
+    return cantidad_letras_palabra
+
+def representacion_letras_en_guiones(cantidad):
+    cantidad_giunes = list('_') * cantidad
+    return cantidad_giunes
+
+def pedir_usuario_letra():
+    # print(aleatorio)
+    mi_lista_guines = guiones
+    vidas = 6 - 1
+    letras_ingresadas = set()
+    letras_adivinadas = set()
+    while vidas != 0 - 1:
+        letra_usuario = input('Dime una letra: ').lower()
+        if letra_usuario.isalpha() and len(letra_usuario) == 1:
+            if letra_usuario in letras_ingresadas:
+                print(f'La letra "{letra_usuario}" ya ha sido ingresada antes.')
+                letras_ingresadas.add(letra_usuario)
+            else:
+                letras_ingresadas.add(letra_usuario)
+                while letra_usuario in aleatorio:
+                    for i, letra in enumerate(aleatorio):
+                        if letra == letra_usuario:
+                            mi_lista_guines[i] = letra_usuario
+                            letras_adivinadas.add(letra_usuario)
+
+
+                    print('\n')
+                    print(f"Letras ingresadas{letras_ingresadas}")
+                    print(f'Letras correctas: {letras_adivinadas}')
+                    print(mi_lista_guines)
+
+                    if letras_adivinadas == set(aleatorio):
+                        print('¡Felicidades! Has adivinado todas las letras.')
+                        break
+                    print('\n')
+                    letra_usuario = input('Dime una letra: ').lower()
+
+                else:
+                    print(f'La letra que elegiste "{letra_usuario}" no esta en la palabra, te quedan {vidas} vidas')
+                    letras_ingresadas.add(letra_usuario)
+                    print(f"Letras ingresadas{letras_ingresadas}")
+
+            vidas -= 1
+        else:
+            print(f'Haz elegido un caracter no correspondiente')
+
+cantidad_caracteres = mensaje_a_usuario()
+guiones = representacion_letras_en_guiones(cantidad_caracteres)
+
+pedir_usuario_letra()
+
+
